@@ -8,6 +8,11 @@ class NotetrackingappApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
+	@Test
+	void shouldgetallclasses(){
+
+	}
 }

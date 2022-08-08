@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des classes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Suivi de notes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Classes <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/student/getall">Eleves</a>
+                <a class="nav-item nav-link" href="/teacher/getall">Professeur</a>
+            </div>
+        </div>
+    </nav>
+
+    <h2>Liste des classes</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Niveau</th>
+            <th scope="col">Professeur principal</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="csl : ${classschool}">
+                <tr>
+                    <td th:text="${csl.level}"></td>
+                    <td th:text="${csl.headteacher.firstname + ' ' + csl.headteacher.lastname}"></td>
+                    <td><a th:href="@{/classe/get/{id}(id=${csl.id})}">Afficher</a></td>
+                </tr>
+            </th:block>
+        </tbody>
+
+    </table>
+</body>
+</html>

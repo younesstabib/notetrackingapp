@@ -8,6 +8,11 @@ Système de gestion de Base de donnée: `MariaDB` <br>
 ## Lancement de l'application en local
 
 ### Création de la BDD
+- Avant d'importer la base de données, créez un utilisateur sur votre SGBD avec comme éléments de connexion les informations suivantes
+```shell
+Identifiant : ntapp
+Mot de passe : ntapp
+```
 - Après avoir cloné le projet, récupérez le dump de la base de données se situant dans le dossier "dump"
 - Allez sur votre SGBD et créez la base de données : 
   - Nom de la base de données : notetrackingapp
